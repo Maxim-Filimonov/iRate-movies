@@ -25,7 +25,7 @@ var render = {
   results: function (state) {
     const listItems = state.list.map((item) => {
       return `<li id="${item.id}">
-                <a href="" class="detail">Name: ${item.name}</a>
+                <a href="" class="detail">${item.name} ${item.date}</a>
                 <a href="#" class="remove">X</a>
               </li>`;
     });

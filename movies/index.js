@@ -19,18 +19,15 @@ const items = require('../db/storage')('items');
 // items.addOne({ name: 'eee' });
 // items.addOne({ name: 'fff' });
 
-function seedData() {
-	Movie
-		.find()
+function seedMoviesData() {
+	Movie.find().sort({'release_date': -1})
 		.limit(10)
-		.then(movies => {
-			movies.map(movie => {
-				console.log(movie.title, movie.release_date);
-			});
+		.then( movies => {
+			movies.map(movie => items.addOne({name: movie.title, date: movie.release_date}));  
 		});
 }
 
-seedData();
+seedMoviesData();
 
 router.get('/', (req, res) => {
 	const query = req.query;
