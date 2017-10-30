@@ -23,6 +23,7 @@ function seedMoviesData() {
 	Movie.find().sort({'release_date': -1})
 		.limit(10)
 		.then( movies => {
+			console.log(movies)
 			movies.map(movie => items.addOne({name: movie.title, date: movie.release_date}));  
 		});
 }
