@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api/auth/', authRouter);
 app.use('/api/users/', usersRouter);
-app.use('/api/things/', moviesRouter);
+app.use('/api/movies/', moviesRouter);
 
 app.use('*', (req, res) => {
 	return res.status(404).json({ message: 'Not Found' });

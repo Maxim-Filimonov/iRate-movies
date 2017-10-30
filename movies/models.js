@@ -18,6 +18,23 @@ MovieSchema.methods.apiRepr = function() {
 	return {title: this.title};
 };
 
+const ReviewSchema = mongoose.Schema({
+	username: {type: String},
+	content: { type: String, required: true },
+	created: { type: Date, default: Date.now }
+});
+
+ReviewSchema.methods.apiRepr = function() {
+	return {
+	  id: this._id,
+	  content: this.content,
+	  created: this.created,
+	  username: this.username
+	};
+  };
+  
+  const Review = mongoose.model('Review', ReviewSchema);
+
 const Movie = mongoose.modelNames.Movie || mongoose.model('Movie', MovieSchema);
 
-module.exports = { Movie };
+module.exports = { Movie, Review };

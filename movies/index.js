@@ -5,7 +5,7 @@ const passport = require('passport');
 const router = express.Router();
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
-const { Movie } = require('./models');
+const { Movie, Review } = require('./models');
 
 const jwtAuth = passport.authenticate('jwt', { session: false });
 
@@ -43,8 +43,8 @@ router.get('/:id', (req, res) => {
 
 router.post('/', jwtAuth, jsonParser, (req, res) => {
 	// Remember, *never* trust users, *always* validate data
-	const thing = req.body;
-	return res.status(201).json(items.addOne(thing));
+	const review = req.body;
+	return res.status(201).json(items.addOne(review));
 });
 
 router.put('/:id', jwtAuth, jsonParser, (req, res) => {
