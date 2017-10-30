@@ -1,6 +1,4 @@
-## sorta lame kaggle database
-
-iRate Movies!
+##iRate Movies!
 
 Upon loading the app, the user will be able to see a list prepopulated with data about most recent movies.
 

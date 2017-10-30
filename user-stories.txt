@@ -1,0 +1,19 @@
+// ANONYMOUS
+
+As an anonymous user, I can...
+-   load app prepopulated with latest movie data
+-   search database for a particular movie with title
+-   click on movie and view data & past reviews
+-   sign up for an account
+-   log in
+#   do an advanced search using rating, genre, release year, keywords...
+
+// LOGGED IN
+
+As a logged in user, I can also...
+-   rate a movie
+-   write and post a review
+-   modify own reviews
+-   delete reviews
+#   rate/comment on reviews
+
