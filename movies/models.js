@@ -30,10 +30,10 @@ const ReviewSchema = mongoose.Schema({
 ReviewSchema.methods.apiRepr = function() {
   return {
     id: this._id,
+    flick: this.flick.title,
     content: this.content,
-    created: this.created,
-    author: this.author,
-    flick: this.flick.title
+    author: this.author.username,
+    created: this.created
   };
 };
 

@@ -27,7 +27,7 @@ const UserSchema = mongoose.Schema({
 UserSchema.methods.apiRepr = function() {
   return {
     username: this.username,
-	userId: this._id
+    userId: this._id
   };
 };
 

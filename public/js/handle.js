@@ -81,7 +81,7 @@ var handle = {
       expiry.setUTCSeconds(decoded.exp);
 
       timer.remaining = Math.floor(expiry - now);
-      console.log('Seconds: ', Math.floor(timer.remaining / 1000));
+      //console.log('Seconds: ', Math.floor(timer.remaining / 1000));
       if (timer.remaining < 0) {
         timer.status = 'expired';
       } else if (timer.remaining <= timer.warning) {

@@ -19,19 +19,33 @@ const items = require('../db/storage')('items');
 // items.addOne({ name: 'eee' });
 // items.addOne({ name: 'fff' });
 
-function seedMoviesData() {
-  Movie.find()
-    .sort({ release_date: -1 })
-    .limit(10)
-    .then(movies => {
-      //console.log(movies);
-      movies.map(movie =>
-        items.addOne({ name: movie.title, date: movie.release_date })
-      );
-    });
+// function seedMoviesData() {
+//   Movie.find()
+//     .sort({ release_date: -1 })
+//     .limit(10)
+//     .then(movies => {
+//       //console.log(movies);
+// 	  movies.map(movie =>
+// 		console.log(movie._id)
+//         //items.addOne({ name: movie.title, date: movie.release_date })
+//       );
+//     });
+// }
+
+// seedMoviesData();
+
+
+
+function renderReviews() {
+  Review.find().then(reviews => {
+    //console.log(movies);
+    reviews.map(review =>
+      items.addOne({ name: review.content, date: review.created })
+    );
+  });
 }
 
-seedMoviesData();
+renderReviews();
 
 router.get('/', (req, res) => {
   const query = req.query;
@@ -48,7 +62,6 @@ router.get('/', (req, res) => {
 router.post('/', jwtAuth, jsonParser, (req, res) => {
   // Remember, *never* trust users, *always* validate data
   const { content, movieId } = req.body;
-  console.log(req.user);
   const { userId } = req.user;
   Review.create({
     author: userId,
@@ -73,14 +86,34 @@ router.get('/:id', (req, res) => {
 
 router.put('/:id', jwtAuth, jsonParser, (req, res) => {
   // Remember, *never* trust users, *always* validate data
-  const body = req.body;
-  return res.json(items.modOne(body));
+  if (!(req.params.id && req.body.id && req.params.id === req.body.id)) {
+    res.status(400).json({
+      error: 'Request path id and request body id values must match'
+    });
+  }
+  if (!req.body.content) {
+    res.status(400).json({
+      error: 'Must have content'
+    });
+  }
+  Review.findByIdAndUpdate(req.params.id, { $set: req.body }, { new: true })
+    .then(updated => {
+      //console.log(updated.id, '===', req.params.id, '===', req.body);
+      res.status(201).json(items.modOne(req.body));
+      // res.status(201).json(updated);
+    })
+    .catch(error => {
+      console.error(error);
+      res.status(500).json(error);
+    });
 });
 
 router.delete('/:id', jwtAuth, (req, res) => {
   const id = req.params.id;
-  items.delOne(id);
-  return res.sendStatus(204);
+  Review.findByIdAndRemove(req.params.id).then(() => {
+    items.delOne(id);
+    res.sendStatus(204);
+  });
 });
 
 module.exports = { router };

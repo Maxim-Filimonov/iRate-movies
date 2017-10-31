@@ -25,7 +25,7 @@ var STORE;
 jQuery(function ($) {
 
   STORE = {
-    demo: false,        // display in demo mode true | false
+    demo: true,        // display in demo mode true | false
     view: 'login',      // current view: signup | login | search | create | details | edit 
     backTo: null,       // previous view to go back to
     query: {},          // search query values
