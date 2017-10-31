@@ -23,8 +23,8 @@ MovieSchema.methods.apiRepr = function() {
 const ReviewSchema = mongoose.Schema({
   content: { type: String, required: true },
   created: { type: Date, default: Date.now },
-  movieId: { type: mongoose.Schema.Types.ObjectID, ref: 'Movie' },
-  userId: { type: mongoose.Schema.Types.ObjectID, ref: 'User' }
+  flick: { type: mongoose.Schema.Types.ObjectId, ref: 'Movie' },
+  author: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
 });
 
 ReviewSchema.methods.apiRepr = function() {
@@ -32,8 +32,8 @@ ReviewSchema.methods.apiRepr = function() {
     id: this._id,
     content: this.content,
     created: this.created,
-    userId: this.userId,
-    movieId: this.movieId
+    author: this.author,
+    flick: this.flick.title
   };
 };
 
