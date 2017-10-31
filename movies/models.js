@@ -32,8 +32,8 @@ ReviewSchema.methods.apiRepr = function() {
     id: this._id,
     content: this.content,
     created: this.created,
-	userId: this.userId,
-	movieId: this.movieId
+    userId: this.userId,
+    movieId: this.movieId
   };
 };
 
