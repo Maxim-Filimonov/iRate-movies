@@ -8,6 +8,7 @@ const passport = require('passport');
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
+
 const { router: authRouter, basicStrategy, jwtStrategy } = require('./auth');
 const { router: usersRouter } = require('./users');
 const { router: moviesRouter } = require('./movies');

@@ -1,5 +1,5 @@
 'use strict';
-
+const faker = require('faker')
 const express = require('express');
 const passport = require('passport');
 const router = express.Router();
@@ -19,22 +19,33 @@ const items = require('../db/storage')('items');
 // items.addOne({ name: 'eee' });
 // items.addOne({ name: 'fff' });
 
-// function seedMoviesData() {
-//   Movie.find()
-//     .sort({ release_date: -1 })
-//     .limit(10)
-//     .then(movies => {
-//       //console.log(movies);
-// 	  movies.map(movie =>
-// 		console.log(movie._id)
-//         //items.addOne({ name: movie.title, date: movie.release_date })
-//       );
-//     });
-// }
+function seedMoviesData() {
+  Movie.find()
+    .sort({ release_date: -1 })
+    .limit(10)
+    .then(movies => {
+      //console.log(movies);
+    movies.map(movie =>
+      console.log(movie._id)
+        //items.addOne({ name: movie.title, date: movie.release_date })
+      );
+    });
+}
 
-// seedMoviesData();
+seedMoviesData();
 
 
+function seedUserData() {
+ const User = {
+    firstName: faker.name.firstName(),
+    lastName: faker.name.lastName(),
+    password: 'dev'
+  }
+  User.username = User.firstName.toLowerCase()
+  console.log(User)
+}
+
+seedUserData();
 
 function renderReviews() {
   Review.find().then(reviews => {
