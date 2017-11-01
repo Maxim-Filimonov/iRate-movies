@@ -26,7 +26,7 @@ var render = {
     const listItems = state.list.map((item) => {
       return `<li id="${item.id}">
                 <a href="" class="detail">${item.name} ${item.date}</a>
-                <a href="#" class="remove">X</a>
+                <a href="#" class="remove"></a>
               </li>`;
     });
     $('#result').empty().append('<ul>').find('ul').append(listItems);
