@@ -134,7 +134,7 @@ var handle = {
       }).catch(err => {
         if (err.status === 401) {
           state.backTo = state.view;
-          state.view = 'signup';
+          state.view = 'detail';
           render.page(state);
         }
         console.error('ERROR:', err);
@@ -160,7 +160,7 @@ var handle = {
       }).catch(err => {
         if (err.status === 401) {
           state.backTo = state.view;
-          state.view = 'signup';
+          state.view = 'detail';
           render.page(state);
         }
         console.error('ERROR:', err);

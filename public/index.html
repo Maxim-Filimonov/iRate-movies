@@ -12,12 +12,12 @@
 </head>
 
 <body>
-	<h2>API Client</h2>
+	<h2>iRate Movie Review</h2>
 	<ul id="nav">
 		<li> </li><a href="" class="viewSearch">Search</a> |
 		<li> </li><a href="" class="viewSignup">SignUp</a> |
 		<li> </li><a href="" class="viewLogin">Login</a> |
-		<li> </li><a href="" class="viewCreate">Create</a> |
+		<!-- <li> </li><a href="" class="viewCreate">Write a Review</a> | -->
 	</ul>
 	<section id="statusbar">
 		Token: <span class="message">None</span>
@@ -25,16 +25,16 @@
 
 	<form id="search" class="view">
 		<fieldset>
-			<legend>Search</legend>
+			<legend>Movie Search</legend>
 			<div>
-				<label for="name">Name</label>
-				<input type="text" name="name" placeholder="enter search">
+				<label for="name"></label>
+				<input type="text" name="name" placeholder="search">
 			</div>
-			<button type="submit">Submit</button>
+			<button type="submit">GO</button>
 		</fieldset>
 
 		<div id="result"></div>
-		<a href="" class="viewCreate">Insert One</a>
+		<!-- <a href="" class="viewCreate">Insert One</a> -->
 	</form>
 
 	<form id="signup" class="view">
@@ -42,11 +42,15 @@
 			<legend>Signup</legend>
 			<div>
 				<label for="username">Username</label>
-				<input type="text" id="username" name="username" value="dev2">
+				<input type="text" id="username" name="username" value="">
 			</div>
 			<div>
 				<label for="password">Password</label>
-				<input type="password" id="password" name="password" value="dev2">
+				<input type="password" id="password" name="password" value="">
+			</div>
+			<div>
+				<label for="password">Confirm Password</label>
+				<input type="password" id="password" name="password" value="">
 			</div>
 			<button type="submit">Signup</button> Already have an account? <a href="" class="viewLogin">Login</a>
 		</fieldset>
@@ -57,22 +61,32 @@
 			<legend>Login</legend>
 			<div>
 				<label for="username">Username</label>
-				<input type="text" id="username" name="username" value="dev2">
+				<input type="text" id="username" name="username" value="">
 			</div>
 			<div>
 				<label for="password">Password</label>
-				<input type="password" id="password" name="password" value="dev2">
+				<input type="password" id="password" name="password" value="">
 			</div>
 			<button type="submit">Login</button> Don't have an account? <a href="" class="viewSignup">Signup</a>
 		</fieldset>
 	</form>
 
 	<form id="create" class="view">
+			<fieldset>
+					<legend>Detail</legend>
+					<div>
+						<label for="name">Name</label>
+						<span class="name">vxzc</span>
+					</div>
+					<a href="" class="viewCreate">Write a Review</a>
+				</fieldset>
+				<a href="" class="viewList">&lt; Back to list results </a>
+			</section>
 		<fieldset>
-			<legend>Create</legend>
+			<legend>Write a Review</legend>
 			<div>
-				<label for="name">Name</label>
-				<input type="text" name="name">
+				<label for="review">Review</label>
+				<textarea rows="4" cols="50" type="text" name="reveiw"></textarea>
 			</div>
 			<button type="submit">Submit</button>
 		</fieldset>
@@ -85,7 +99,8 @@
 				<label for="name">Name</label>
 				<span class="name">vxzc</span>
 			</div>
-			<a href="" class="edit">Edit</a>
+			<a href="" class="viewCreate">Write a Review</a>
+			<a href="" class="edit">Update Review</a>
 		</fieldset>
 		<a href="" class="viewList">&lt; Back to list results </a>
 	</section>
@@ -93,10 +108,14 @@
 	<form id="edit" class="view">
 		<fieldset>
 			<legend>Edit</legend>
-			<div>
+			<!-- <div>
 				<label for="name">Name</label>
 				<input type="text" name="name">
-			</div>
+			</div> -->
+			<div>
+					<label for="review">Review</label>
+					<textarea rows="4" cols="50" type="text" name="reveiw"></textarea>
+				</div>
 			<button type="submit">Submit</button>
 		</fieldset>
 	</form>
