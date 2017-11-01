@@ -6,7 +6,7 @@ const router = express.Router();
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
 const { Movie, Review } = require('./models');
-
+const { User } = require('../users/models')
 const jwtAuth = passport.authenticate('jwt', { session: false });
 
 const items = require('../db/storage')('items');
@@ -36,20 +36,24 @@ seedMoviesData();
 
 
 function seedUserData() {
- const User = {
-    firstName: faker.name.firstName(),
+  const firstName = faker.name.firstName();
+  User
+  // .find()
+  // .then(results => )
+  
+  .create({
+    firstName: firstName,
     lastName: faker.name.lastName(),
-    password: 'dev'
-  }
-  User.username = User.firstName.toLowerCase()
-  console.log(User)
-}
+    // use 'dev' for password when logging in.
+    password: '$2a$10$7FyFDShU8Gt99Feu4Ip74.1J3AvmACWUGh7l.tfK80U05P2Ng87wq',
+    username: firstName.toLowerCase()
+  })
+};
 
 seedUserData();
 
 function renderReviews() {
   Review.find().then(reviews => {
-    //console.log(movies);
     reviews.map(review =>
       items.addOne({ name: review.content, date: review.created })
     );
@@ -57,6 +61,7 @@ function renderReviews() {
 }
 
 renderReviews();
+
 
 router.get('/', (req, res) => {
   const query = req.query;
@@ -71,12 +76,21 @@ router.get('/', (req, res) => {
 // });
 //59f77af2ef2de52021d9ef30
 router.post('/', jwtAuth, jsonParser, (req, res) => {
-  // Remember, *never* trust users, *always* validate data
-  const { content, movieId } = req.body;
+  const requiredFields = ['id', 'content'];
+  requiredFields.forEach(field => {
+    if (!(field in req.body)) {
+      const message = `You are missing required field: ${field}`;
+      console.log(message);
+      return res.status(400).send(message);
+    }
+  });
+    // Remember, *never* trust users, *always* validate data
+  const { content, id } = req.body;
   const { userId } = req.user;
+  
   Review.create({
     author: userId,
-    flick: movieId,
+    flick: id,
     content
   })
     .then(review => {
@@ -84,7 +98,7 @@ router.post('/', jwtAuth, jsonParser, (req, res) => {
     })
     .catch(err => {
       console.error(err);
-      res.status(500).json({ error: 'Something went wrong' });
+      res.status(500).json({ error: 'Something went wrong!!!' });
     });
 });
 

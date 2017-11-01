@@ -35,6 +35,7 @@ ReviewSchema.methods.apiRepr = function() {
     author: this.author.username,
     created: this.created
   };
+  
 };
 
 const Review = mongoose.model('Review', ReviewSchema);
