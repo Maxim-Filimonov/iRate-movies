@@ -35,7 +35,7 @@ describe('Auth endpoints', function () {
   afterEach(function () {
     return User.remove({});
   });
-
+// asks whether we can  hit the endpoint or not
   describe('/api/auth/login', function () {
     it('Should reject requests with no credentials', function () {
       return chai
@@ -91,6 +91,7 @@ describe('Auth endpoints', function () {
       return chai
         .request(app)
         .post('/api/auth/login')
+        // 
         .auth(username, password)
         .then(res => {
           expect(res).to.have.status(200);

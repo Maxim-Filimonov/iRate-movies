@@ -13,7 +13,7 @@ const { JWT_SECRET } = require('../config');
 const expect = chai.expect;
 
 chai.use(chaiHttp);
-
+// might need to adjust.skip
 describe.skip('Protected endpoint', function () {
   const username = 'exampleUser';
   const password = 'examplePass';
@@ -129,7 +129,8 @@ describe.skip('Protected endpoint', function () {
         .then(res => {
           expect(res).to.have.status(200);
           expect(res.body).to.be.an('object');
-          expect(res.body.data).to.equal('rosebud');
+          expectt(res.body).to.be.an('array');
+          // expect(res.body.data).to.equal('rosebud');
         });
     });
   });

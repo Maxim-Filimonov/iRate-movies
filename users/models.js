@@ -6,35 +6,39 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
 const UserSchema = mongoose.Schema({
-	username: {
-		type: String,
-		required: true,
-		unique: true
-	},
-	password: {
-		type: String,
-		required: true
-	},
-	firstName: {
-		type: String,
-		// required: true
-	},
-	lastName: {
-		type: String,
-		// required: true
-	}
+  //  _id: mongoose.Schema.Types.ObjectId,
+  username: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  password: {
+    type: String,
+    required: true
+  },
+  firstName: {
+    type: String
+  },
+  lastName: {
+    type: String
+  }
 });
 
-UserSchema.methods.apiRepr = function () {
-	return { username: this.username };
+
+
+UserSchema.methods.apiRepr = function() {
+  return {
+    username: this.username,
+    userId: this._id
+  };
 };
 
-UserSchema.methods.validatePassword = function (password) {
-	return bcrypt.compare(password, this.password);
+UserSchema.methods.validatePassword = function(password) {
+  return bcrypt.compare(password, this.password);
 };
 
-UserSchema.statics.hashPassword = function (password) {
-	return bcrypt.hash(password, 10);
+UserSchema.statics.hashPassword = function(password) {
+  return bcrypt.hash(password, 10);
 };
 
 const User = mongoose.models.User || mongoose.model('User', UserSchema);
