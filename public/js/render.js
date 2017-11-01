@@ -39,6 +39,7 @@ var render = {
   detail: function (state) {
     const el = $('#detail');
     const item = state.item;
+   // console.log(item);
     el.find('.name').text(item.name);
   },
   status: function (state) {

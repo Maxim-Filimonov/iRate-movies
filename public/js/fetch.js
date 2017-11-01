@@ -97,7 +97,6 @@ var api = {
   },
   details: function (id) {
     const url = buildUrl(`${ITEMS_URL}${id}`);
-
     return fetch(url, {
       method: 'GET',
       headers: {

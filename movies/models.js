@@ -17,7 +17,11 @@ const MovieSchema = mongoose.Schema({
 });
 
 MovieSchema.methods.apiRepr = function() {
-  return { title: this.title };
+  return { 
+    title: this.title,
+    id: this._id,
+    releaseDate: this.release_date
+  };
 };
 
 const ReviewSchema = mongoose.Schema({
