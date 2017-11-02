@@ -7,12 +7,23 @@
 	<title>Home</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
+	<href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
 	<link rel="icon" href="data:;base64,iVBORw0KGgo=">
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
+
+	<div class="background-wrap">
+
+		<video id="video-bg-elem" preload="auto" autoplay="true" loop="loop" muted="muted">
+			<source src="http://thenewcode.com/assets/videos/polina.webm" type="video/mp4"
+			Video Not Supported
+		</video>
+		
+		
+	</div>
+<div class="content">
 	<h2>iRate Movie Review</h2>
 	<ul id="nav">
 		<li> </li><a href="" class="viewSearch">Search</a> |
@@ -29,7 +40,7 @@
 			<legend>Movie Search</legend>
 			<div>
 				<label for="name"></label>
-				<input type="text" name="name" placeholder="search">
+				<input class="search-box" type="text" name="name" placeholder="search">
 			</div>
 			<button type="submit">GO</button>
 		</fieldset>
@@ -117,7 +128,13 @@
 		</fieldset>
 		<a href="" class="viewList">&lt; Back to list results </a>
 	</section>
-
+	<div class="background-wrap">
+			
+	<video id="video-bg-elem" preload="auto" autoplay="true" loop="loop" muted="muted">
+			<source src="https://fpdl.vimeocdn.com/vimeo-prod-skyfire-std-us/01/1660/7/183300011/602753730.mp4?token=1509674283-0xa097afb64125babd7e07a2122fc4fa9d504858c2&download=1&filename=Director+Chair+-+5130.mp4" type="video/mp4"
+			Video Not Supported
+		</video>
+	</div>
 	<form id="edit" class="view">
 		<fieldset>
 			<legend>Edit</legend>
@@ -147,7 +164,7 @@
 		
 		</fieldset>
 	</form>
-
+</div>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 	 crossorigin="anonymous"></script>
 	<script>
