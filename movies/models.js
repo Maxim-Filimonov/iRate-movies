@@ -13,6 +13,9 @@ const MovieSchema = mongoose.Schema({
   },
   release_date: {
     type: String
+  },
+  tagline: {
+    type: String
   }
 });
 
@@ -20,7 +23,8 @@ MovieSchema.methods.apiRepr = function() {
   return { 
     title: this.title,
     id: this._id,
-    releaseDate: this.release_date
+    releaseDate: this.release_date, 
+    tagline: this.tagline
   };
 };
 

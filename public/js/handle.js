@@ -6,6 +6,8 @@
  * Event Handlers validate input, update STATE and call render methods
  */
 
+//var activeMovieId;
+
 var handle = {
   signup: function (event) {
     event.preventDefault();
@@ -118,23 +120,28 @@ var handle = {
 
   create: function (event) {
     event.preventDefault();
+    console.log('here');
     const state = event.data;
+    console.log('here', state.list);
     const el = $(event.target);
+    console.log(el);
 
     const document = {
-      name: el.find('[name=name]').val()
+      content: el.find('#textarea-review').val(),
+      id: window.activeMovieId
     };
+    console.log(document);
     api.create(document, state.token)
       .then(response => {
         state.item = response;
         state.list = null; //invalidate cached list results
         render.detail(state);
-        state.view = 'detail';
+        state.view = 'comment';
         render.page(state);
       }).catch(err => {
         if (err.status === 401) {
           state.backTo = state.view;
-          state.view = 'detail';
+          state.view = 'search';
           render.page(state);
         }
         console.error('ERROR:', err);

@@ -10,7 +10,7 @@
  * - Do not call render methods from this layer
  * 
  */
-
+const GETS_URL = '/api/api/things/gets';
 const ITEMS_URL = '/api/things/';
 const USERS_URL = '/api/users/';
 const LOGIN_URL = '/api/auth/login/';
