@@ -69,9 +69,8 @@ var render = {
       $('#statusbar').css('background-color', 'red').find('.message').text(timer.status);
       break;
     default:
-      $('#statusbar').css('background-color', 'green').find('.message').text(timer.status);
+      $('#statusbar').css('background-color', 'grey').find('.message').text(timer.status);
       break;
     }
   }
 };
-

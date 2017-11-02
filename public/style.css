@@ -1,5 +1,9 @@
 body {
-  background-image: url('http://templatemints.com/rttheme13/images/background_images/abstract_background7.jpg');
+  background-image: url('https://nicklodeon.files.wordpress.com/2011/01/movie-theater.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  font-family: 'Bitter', serif; 
+  text-align: center;
 }
 
 form, section {
@@ -27,4 +31,13 @@ button {
 
 #nav li {
   display: inline
+}
+
+a {
+  color: black;
+  
+}
+
+li {
+  list-style: none;
 }
