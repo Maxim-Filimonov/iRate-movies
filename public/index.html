@@ -72,21 +72,21 @@
 	</form>
 
 	<form id="create" class="view">
-			<fieldset>
+			<!-- <fieldset>
 					<legend>Detail</legend>
 					<div>
 						<label for="name">Name</label>
 						<span class="name">vxzc</span>
 					</div>
 					<a href="" class="viewCreate">Write a Review</a>
-				</fieldset>
+			</fieldset> -->
 				<a href="" class="viewList">&lt; Back to list results </a>
 			</section>
 		<fieldset>
 			<legend>Write a Review</legend>
 			<div>
 				<label for="review">Review</label>
-				<textarea rows="4" cols="50" type="text" name="reveiw"></textarea>
+				<textarea id="textarea-review" rows="4" cols="50" type="text" name="review"></textarea>
 			</div>
 			<button type="submit">Submit</button>
 		</fieldset>
@@ -96,8 +96,20 @@
 		<fieldset>
 			<legend>Detail</legend>
 			<div>
-				<label for="name">Name</label>
+				<label for="date">Release Date:</label>
+				<span class="date">vxzc</span>
+			</div>
+			<div>
+				<label for="name">Name:</label>
 				<span class="name">vxzc</span>
+			</div>
+			<div>
+				<label for="tagline">Tagline:</label>
+				<span class="tagline">vxzc</span>
+			</div>
+			<div>
+				<label for="movieId">Id:</label>
+				<span class="movieId"></span>
 			</div>
 			<a href="" class="viewCreate">Write a Review</a>
 			<a href="" class="edit">Update Review</a>
@@ -114,9 +126,19 @@
 			</div> -->
 			<div>
 					<label for="review">Review</label>
-					<textarea rows="4" cols="50" type="text" name="reveiw"></textarea>
+					<textarea id="textarea-review" rows="4" cols="50" type="text" name="review"></textarea>
 				</div>
 			<button type="submit">Submit</button>
+		</fieldset>
+	</form>
+
+	<form id="comment" class="view">
+				<a href="" class="viewList">&lt; Back to Movies List</a>
+			</section>
+		<fieldset>
+			<legend>Reviews</legend>
+			<a href="" class="edit">Update Review</a>
+		
 		</fieldset>
 	</form>
 

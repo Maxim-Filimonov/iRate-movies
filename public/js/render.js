@@ -11,6 +11,8 @@
  * 
  */
 
+
+
 var render = {
   page: function (state) {
     if (state.demo) {
@@ -31,6 +33,7 @@ var render = {
     });
     $('#result').empty().append('<ul>').find('ul').append(listItems);
   },
+  
   edit: function (state) {
     const el = $('#edit');
     const item = state.item;
@@ -39,8 +42,12 @@ var render = {
   detail: function (state) {
     const el = $('#detail');
     const item = state.item;
-   // console.log(item);
-    el.find('.name').text(item.name);
+    console.log(item.id);
+    el.find('.date').text(`${item.date}`);
+    el.find('.name').text(` ${item.name}`);
+    el.find('.tagline').text(`${item.tagline} `);
+    el.find('.movieId').text(`${item.id} `);
+    window.activeMovieId = item.id;
   },
   status: function (state) {
     const timer = state.timer;
@@ -57,3 +64,4 @@ var render = {
     }
   }
 };
+
