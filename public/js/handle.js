@@ -136,7 +136,7 @@ var handle = {
         state.item = response;
         state.list = null; //invalidate cached list results
         render.detail(state);
-        state.view = 'comment';
+        state.view = 'detail';
         render.page(state);
       }).catch(err => {
         if (err.status === 401) {
@@ -155,7 +155,7 @@ var handle = {
 
     const document = {
       id: state.item.id,
-      name: el.find('[name=name]').val()
+      content: el.find('#textarea-review').val(),
     };
     api.update(document, state.token)
       .then(response => {
