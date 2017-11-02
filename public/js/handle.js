@@ -135,8 +135,8 @@ var handle = {
       .then(response => {
         state.item = response;
         state.list = null; //invalidate cached list results
-        render.detail(state);
-        state.view = 'detail';
+        render.review(state);
+        state.view = 'review';
         render.page(state);
       }).catch(err => {
         if (err.status === 401) {

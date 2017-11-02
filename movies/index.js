@@ -62,6 +62,17 @@ router.get('/', (req, res) => {
   return res.json(list);
 });
 
+router.get('/reviews', (req, res) => {
+  console.log('hello1');
+  return Review.find()
+    .populate('author', ['username'])
+    .populate('flick', ['title'])
+    .then(result => {
+      console.log(result);
+      res.json(result);
+    });
+});
+
 router.get('/:id', (req, res) => {
   const id = req.params.id;
   return res.json(items.getOne(id));
@@ -95,19 +106,29 @@ router.post('/', jwtAuth, jsonParser, (req, res) => {
     });
 });
 
+// router.get('/foobar', (req, res, next) => {
+//   console.log('next');
+//   next();
+// }, (req, res) => {
+//   console.log('hello1');
+//   // return Review.find()
+//   //   .populate('author')
+//   //   .populate('flick')
+//   //   .then(result => {
+//   //     console.log(result);
+//   //     res.json(result.apiRepr());
+//   //   });
+// });
+
 router.get('/reviews/:id', (req, res) => {
+  console.log('hello2');
   return Review.findById(req.params.id)
     .populate('author')
     .populate('flick')
     .then(result => res.json(result.apiRepr()));
 });
 
-router.get('/reviews/', (req, res) => {
-  return Review.findAll()
-    .populate('author')
-    .populate('flick')
-    .then(result => res.json(result.apiRepr()));
-});
+
 
 router.put('/:id', jwtAuth, jsonParser, (req, res) => {
   // Remember, *never* trust users, *always* validate data
@@ -134,7 +155,7 @@ router.put('/:id', jwtAuth, jsonParser, (req, res) => {
     });
 });
 
-router.delete('/:id', jwtAuth, (req, res) => {
+router.delete('/reviews/:id', jwtAuth, (req, res) => {
   const id = req.params.id;
   Review.findByIdAndRemove(req.params.id).then(() => {
     items.delOne(id);

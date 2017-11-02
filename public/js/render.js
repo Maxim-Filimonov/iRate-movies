@@ -42,11 +42,21 @@ var render = {
   detail: function (state) {
     const el = $('#detail');
     const item = state.item;
-    console.log(item.id);
+    console.log('===========', item.id);
     el.find('.date').text(`${item.date}`);
     el.find('.name').text(` ${item.name}`);
     el.find('.tagline').text(`${item.tagline} `);
     el.find('.movieId').text(`${item.id} `);
+    window.activeMovieId = item.id;
+  },
+  review: function (state) {
+    const el = $('#review');
+    const item = state.item;
+    console.log('===========', item.id);
+    el.find('.review').text(`${item.content}`);
+    // el.find('.name').text(` ${item.name}`);
+    // el.find('.tagline').text(`${item.tagline} `);
+    // el.find('.movieId').text(`${item.id} `);
     window.activeMovieId = item.id;
   },
   status: function (state) {
