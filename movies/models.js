@@ -20,10 +20,10 @@ const MovieSchema = mongoose.Schema({
 });
 
 MovieSchema.methods.apiRepr = function() {
-  return { 
+  return {
     title: this.title,
     id: this._id,
-    releaseDate: this.release_date, 
+    releaseDate: this.release_date,
     tagline: this.tagline
   };
 };
@@ -43,7 +43,6 @@ ReviewSchema.methods.apiRepr = function() {
     author: this.author.username,
     created: this.created
   };
-  
 };
 
 const Review = mongoose.model('Review', ReviewSchema);
