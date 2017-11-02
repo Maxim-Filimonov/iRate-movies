@@ -55,6 +55,7 @@ jQuery(function ($) {
   $('#result').on('click', '.detail', STORE, handle.details);
   $('#result').on('click', '.remove', STORE, handle.remove);
   $('#detail').on('click', '.edit', STORE, handle.viewEdit);
+  $('#review').on('click', '.edit', STORE, handle.viewEdit);
   
   $(document).on('click', '.viewCreate', STORE, handle.viewCreate);
   $(document).on('click', '.viewLogin', STORE, handle.viewLogin);
