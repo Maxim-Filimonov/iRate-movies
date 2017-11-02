@@ -95,7 +95,7 @@ router.post('/', jwtAuth, jsonParser, (req, res) => {
     });
 });
 
-router.get('/gets/:id', (req, res) => {
+router.get('/review/:id', (req, res) => {
   return Review.findById(req.params.id)
     .populate('author')
     .populate('flick')

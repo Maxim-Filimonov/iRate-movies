@@ -162,7 +162,7 @@ var handle = {
         state.item = response;
         state.list = null; //invalidate cached list results
         render.detail(state);
-        state.view = 'detail';
+        state.view = 'comment';
         render.page(state);
       }).catch(err => {
         if (err.status === 401) {

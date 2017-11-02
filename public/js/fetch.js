@@ -11,7 +11,7 @@
  * 
  */
 const GETS_URL = '/api/api/things/gets';
-const ITEMS_URL = '/api/things/';
+const ITEMS_URL = '/api/movies/';
 const USERS_URL = '/api/users/';
 const LOGIN_URL = '/api/auth/login/';
 const REFRESH_URL = '/api/auth/refresh/';
