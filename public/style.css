@@ -4,7 +4,7 @@ body {
   background-size: 100%;
   font-family: 'Bitter', serif; 
   text-align: center;
-  color: white;
+  color: silver;
   margin: auto;
 }
 
@@ -32,7 +32,7 @@ button {
   width: 100px;
   /* margin-left: 20px;*/
   margin-top: 20px;
-  background-color: lightblue;
+  background-color: silver;
   border-radius: 15px;
   margin-left: 0px;
 }
@@ -51,6 +51,7 @@ button {
 a {
   color: rgb(230, 203, 203);
   font-size: 20px;
+  text-decoration: none;
 }
 
 h2 {
@@ -62,6 +63,10 @@ li {
   list-style: none;
   margin: auto;
   text-align: center;
+}
+
+ul {
+  padding: 0px;
 }
 
 .background-wrap {
@@ -86,9 +91,13 @@ li {
 .content {
   position: absolute;
   width: 100%;
-  min-height: 90%;
+  min-height: 100%;
   z-index: 1000;
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(19, 18, 18, 0.7);
+}
+
+.writeupdate {
+  padding-top: 10px;
 }
 
 .search-box {
@@ -96,6 +105,7 @@ li {
   margin: auto;
   border-radius: 15px;
   margin-top: 0px;
+  text-align: center;
 }
 
 .reviewLabel{
@@ -124,6 +134,7 @@ li {
 
 .movie-search {
   margin: auto;
+  text-decoration-color: silver;
 }
 /* .btn {
   background: #3498db;
