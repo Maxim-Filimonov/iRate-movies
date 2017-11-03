@@ -108,6 +108,11 @@ ul {
   text-align: center;
 }
 
+.username, .password, .confirmPassword{
+  border-radius: 15px;
+  text-align: center;
+}
+
 .reviewLabel{
   margin: 0 auto;
 }
