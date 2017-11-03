@@ -11,7 +11,7 @@
  * 
  */
 
-
+let title;
 
 var render = {
   page: function (state) {
@@ -42,7 +42,7 @@ var render = {
   detail: function (state) {
     const el = $('#detail');
     const item = state.item;
-    console.log('===========', item.id);
+    title = item.name;
     el.find('.date').text(`${item.date}`);
     el.find('.name').text(` ${item.name}`);
     el.find('.tagline').text(`${item.tagline} `);
@@ -52,11 +52,9 @@ var render = {
   review: function (state) {
     const el = $('#review');
     const item = state.item;
-    console.log('===========', item.id);
+    console.log('===========', title);
     el.find('.review').text(`${item.content}`);
-    // el.find('.name').text(` ${item.name}`);
-    // el.find('.tagline').text(`${item.tagline} `);
-    // el.find('.movieId').text(`${item.id} `);
+    el.find('.review-movie').text(`Movie: ${title}`);
     window.activeMovieId = item.id;
   },
   status: function (state) {
@@ -69,9 +67,10 @@ var render = {
       $('#statusbar').css('background-color', 'red').find('.message').text(timer.status);
       break;
     default:
-      $('#statusbar').css('background-color', 'green').find('.message').text(timer.status);
+      $('#statusbar').css('background-color', 'grey').find('.message').text(timer.status);
       break;
     }
   }
 };
+
 

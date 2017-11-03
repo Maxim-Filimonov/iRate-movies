@@ -18,6 +18,7 @@ function seedLandingPageMoviesData() {
     .then(movies =>
       movies.map(movie => {
         movie = movie.apiRepr();
+        //console.log(movie);
         items.addOne({
           id: movie.id,
           name: movie.title,
@@ -86,6 +87,8 @@ router.get('/reviews/:id', (req, res) => {
 });
 
 router.put('/:id', jwtAuth, jsonParser, (req, res) => {
+  // Remember, *never* trust users, *always* validate data
+
   if (!(req.params.id && req.body.id && req.params.id === req.body.id)) {
     res.status(400).json({
       error: 'Request path id and request body id values must match'

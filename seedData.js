@@ -83,7 +83,7 @@ function generateReviews(movieIds) {
 }
 
 mongoose.connect(process.env.DATABASE_URL, { useMongoClient: true })
-    .then(() => mongoose.connection.db.dropCollection('reviews'))
-    .then(() => mongoose.connection.db.dropCollection('users'))
+    // .then(() => mongoose.connection.db.dropCollection('reviews'))
+    // .then(() => mongoose.connection.db.dropCollection('users'))
     .then(() => initializeDb())
     .then(() => mongoose.disconnect());

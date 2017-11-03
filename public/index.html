@@ -7,11 +7,22 @@
 	<title>Home</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
 	<link rel="icon" href="data:;base64,iVBORw0KGgo=">
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
+
+	<div class="background-wrap">
+		<video id="video-bg-elem" preload="auto" autoplay="true" loop="loop" muted="muted">
+			<source src="https://fpdl.vimeocdn.com/vimeo-prod-skyfire-std-us/01/1660/7/183300011/602753730.mp4?token=1509674283-0xa097afb64125babd7e07a2122fc4fa9d504858c2&download=1&filename=Director+Chair+-+5130.mp4" type="video/mp4"type="video/mp4">
+			Video Not Supported
+		</video>
+		<!-- "http://thenewcode.com/assets/videos/polina.webm"  -->
+	</div>
+
+<div class="content">
 	<h2>iRate Movie Review</h2>
 	<ul id="nav">
 		<li> </li><a href="" class="viewSearch">Search</a> |
@@ -19,18 +30,18 @@
 		<li> </li><a href="" class="viewLogin">Login</a> |
 		<!-- <li> </li><a href="" class="viewCreate">Write a Review</a> | -->
 	</ul>
-	<section id="statusbar">
+	<!-- <section id="statusbar">
 		Token: <span class="message">None</span>
-	</section>
+	</section> -->
 
 	<form id="search" class="view">
-		<fieldset>
-			<legend>Movie Search</legend>
+		<fieldset class="fieldsets">
+			<legend class="movie-search">Movie Search</legend>
 			<div>
-				<label for="name"></label>
-				<input type="text" name="name" placeholder="search">
+				<label class="name" for="name"></label>
+				<input class="search-box" type="text" name="name" placeholder="...search">
 			</div>
-			<button type="submit">GO</button>
+			<button class="btn" type="submit">GO</button>
 		</fieldset>
 
 		<div id="result"></div>
@@ -85,7 +96,7 @@
 		<fieldset>
 			<legend>Write a Review</legend>
 			<div>
-				<label for="review">Review</label>
+				<label class="reviewLabel"for="review"></label>
 				<textarea id="textarea-review" rows="4" cols="50" type="text" name="review"></textarea>
 			</div>
 			<button type="submit">Submit</button>
@@ -93,8 +104,8 @@
 	</form>
 
 	<section id="detail" class="view">
-		<fieldset>
-			<legend>Detail</legend>
+		<fieldset class="list">
+			<legend class="detail-legend">Detail</legend>
 			<div>
 				<label for="date">Release Date:</label>
 				<span class="date">vxzc</span>
@@ -116,7 +127,13 @@
 		</fieldset>
 		<a href="" class="viewList">&lt; Back to list results </a>
 	</section>
-
+	<!-- <div class="background-wrap">
+			
+	<video id="video-bg-elem" preload="auto" autoplay="true" loop="loop" muted="muted">
+			<source src="https://fpdl.vimeocdn.com/vimeo-prod-skyfire-std-us/01/1660/7/183300011/602753730.mp4?token=1509674283-0xa097afb64125babd7e07a2122fc4fa9d504858c2&download=1&filename=Director+Chair+-+5130.mp4" type="video/mp4"
+			Video Not Supported
+		</video>
+	</div> -->
 	<form id="edit" class="view">
 		<fieldset>
 			<legend>Edit</legend>
@@ -138,6 +155,7 @@
 		<fieldset>
 			<legend>Reviews</legend>
 			<div>
+				<div class="review-movie">Movie: </div>
 				<label for="review">Review:</label>
 				<span class="review"></span>
 			</div>
@@ -145,7 +163,7 @@
 		
 		</fieldset>
 	</form>
-
+</div>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 	 crossorigin="anonymous"></script>
 	<script>

@@ -6,8 +6,6 @@
  * Event Handlers validate input, update STATE and call render methods
  */
 
-//var activeMovieId;
-
 var handle = {
   signup: function (event) {
     event.preventDefault();
@@ -149,7 +147,7 @@ var handle = {
   },
 
   update: function (event) {
-    event.preventDefault();
+	event.preventDefault();
     const state = event.data;
     const el = $(event.target);
 
@@ -162,7 +160,7 @@ var handle = {
         state.item = response;
         state.list = null; //invalidate cached list results
         render.detail(state);
-        state.view = 'comment';
+        state.view = 'search';
         render.page(state);
       }).catch(err => {
         if (err.status === 401) {
