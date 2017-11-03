@@ -1,10 +1,13 @@
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
 body {
   background-image: url('https://nicklodeon.files.wordpress.com/2011/01/movie-theater.jpg');
   background-repeat: no-repeat;
   background-size: 100%;
-  font-family: 'Bitter', serif; 
   text-align: center;
-  color: silver;
+  color: whitesmoke;
   margin: auto;
 }
 
@@ -49,13 +52,12 @@ button {
 
 
 a {
-  color: rgb(230, 203, 203);
+  color: whitesmoke;
   font-size: 20px;
   text-decoration: none;
 }
 
 h2 {
-  color: rgba(238, 221, 221, 0.904);
   font-size: 40px;
 }
 
@@ -89,8 +91,10 @@ ul {
 }
 
 .content {
-  position: absolute;
-  width: 100%;
+  margin: auto;
+  margin-top: 60px;
+  padding: 20px;
+  width: 800px;
   min-height: 100%;
   z-index: 1000;
   background-color: rgba(19, 18, 18, 0.7);
