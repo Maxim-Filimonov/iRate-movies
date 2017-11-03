@@ -20,6 +20,7 @@ var handle = {
         state.view = 'login';
         render.page(state);
       }).catch(err => {
+        alert('User name is taken');
         if (err.reason === 'ValidationError') {
           console.error('ERROR:', err.reason, err.message);
         } else {
@@ -118,17 +119,13 @@ var handle = {
 
   create: function (event) {
     event.preventDefault();
-    console.log('here');
     const state = event.data;
-    console.log('here', state.list);
     const el = $(event.target);
-    console.log(el);
 
     const document = {
       content: el.find('#textarea-review').val(),
       id: window.activeMovieId
     };
-    console.log(document);
     api.create(document, state.token)
       .then(response => {
         state.item = response;
@@ -147,7 +144,7 @@ var handle = {
   },
 
   update: function (event) {
-	event.preventDefault();
+    event.preventDefault();
     const state = event.data;
     const el = $(event.target);
 
@@ -159,8 +156,8 @@ var handle = {
       .then(response => {
         state.item = response;
         state.list = null; //invalidate cached list results
-        render.detail(state);
-        state.view = 'search';
+        render.review(state);
+        state.view = 'review';
         render.page(state);
       }).catch(err => {
         if (err.status === 401) {
@@ -194,20 +191,35 @@ var handle = {
   remove: function (event) {
     event.preventDefault();
     const state = event.data;
-    const id = $(event.target).closest('li').attr('id');
-
-    api.remove(id, state.token)
-      .then(() => {
-        state.list = null; //invalidate cached list results
-        return handle.search(event);
-      }).catch(err => {
-        if (err.status === 401) {
-          state.backTo = state.view;
-          state.view = 'signup';
-          render.page(state);
-        }
-        console.error('ERROR:', err);
-      });
+    const id = $(event.target).closest('span').attr('id');
+    
+    $('.review-box').on('click', '.remove',function() {
+      api.remove(state.item.id, state.token)
+        .then(() => {
+          state.list = null; //invalidate cached list results
+          state.view = 'search';
+          return handle.search(event);
+        }).catch(err => {
+          if (err.status === 401) {
+            state.backTo = state.view;
+            state.view = 'signup';
+            render.page(state);
+          }
+          console.error('ERROR:', err);
+        });
+    });
+    // api.remove(id, state.token)
+    //   .then(() => {
+    //     state.list = null; //invalidate cached list results
+    //     return handle.search(event);
+    //   }).catch(err => {
+    //     if (err.status === 401) {
+    //       state.backTo = state.view;
+    //       state.view = 'signup';
+    //       render.page(state);
+    //     }
+    //     console.error('ERROR:', err);
+    //   });
   },
   viewCreate: function (event) {
     event.preventDefault();

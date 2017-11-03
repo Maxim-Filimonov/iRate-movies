@@ -53,7 +53,7 @@ jQuery(function ($) {
   $('#edit').on('submit', STORE, handle.update);
 
   $('#result').on('click', '.detail', STORE, handle.details);
-  $('#result').on('click', '.remove', STORE, handle.remove);
+  $('#review').on('click', '.remove', STORE, handle.remove);
   $('#detail').on('click', '.edit', STORE, handle.viewEdit);
   $('#review').on('click', '.edit', STORE, handle.viewEdit);
   

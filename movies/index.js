@@ -18,7 +18,6 @@ function seedLandingPageMoviesData() {
     .then(movies =>
       movies.map(movie => {
         movie = movie.apiRepr();
-        //console.log(movie);
         items.addOne({
           id: movie.id,
           name: movie.title,
@@ -79,16 +78,17 @@ router.post('/', jwtAuth, jsonParser, (req, res) => {
 });
 
 router.get('/reviews/:id', (req, res) => {
-  console.log('hello2');
   return Review.findById(req.params.id)
     .populate('author')
     .populate('flick')
-    .then(result => res.json(result.apiRepr()));
+    .then(result => res.json(result.apiRepr()))
+    .catch(error => {
+      console.error(error);
+      res.status(500).json({ error: 'Review does not exist' });
+    });
 });
 
 router.put('/:id', jwtAuth, jsonParser, (req, res) => {
-  // Remember, *never* trust users, *always* validate data
-
   if (!(req.params.id && req.body.id && req.params.id === req.body.id)) {
     res.status(400).json({
       error: 'Request path id and request body id values must match'

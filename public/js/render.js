@@ -46,13 +46,13 @@ var render = {
     el.find('.date').text(`${item.date}`);
     el.find('.name').text(` ${item.name}`);
     el.find('.tagline').text(`${item.tagline} `);
-    el.find('.movieId').text(`${item.id} `);
+    //el.find('.movieId').text(`${item.id} `);
     window.activeMovieId = item.id;
   },
   review: function (state) {
     const el = $('#review');
     const item = state.item;
-    console.log('===========', title);
+    //console.log('===========', title);
     el.find('.review').text(`${item.content}`);
     el.find('.review-movie').text(`Movie: ${title}`);
     window.activeMovieId = item.id;
