@@ -26,7 +26,7 @@ var render = {
   },
   results: function (state) {
     const listItems = state.list.map((item) => {
-      return `<li id="${item.id}">
+      return `<li class"list" id="${item.id}">
                 <a href="" class="detail">${item.name} ${item.date}</a>
                 <a href="#" class="remove"></a>
               </li>`;
