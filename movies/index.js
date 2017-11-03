@@ -88,7 +88,7 @@ router.get('/reviews/:id', (req, res) => {
     });
 });
 
-router.put('/:id', jwtAuth, jsonParser, (req, res) => {
+router.put('/reviews/:id', jwtAuth, jsonParser, (req, res) => {
   if (!(req.params.id && req.body.id && req.params.id === req.body.id)) {
     res.status(400).json({
       error: 'Request path id and request body id values must match'

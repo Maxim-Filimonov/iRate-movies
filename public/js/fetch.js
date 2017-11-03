@@ -10,7 +10,7 @@
  * - Do not call render methods from this layer
  * 
  */
-const REVIEWS_URL = '/api/moviews/reviews';
+const REVIEWS_URL = '/api/movies/reviews/';
 const ITEMS_URL = '/api/movies/';
 const USERS_URL = '/api/users/';
 const LOGIN_URL = '/api/auth/login/';
@@ -120,7 +120,7 @@ var api = {
 			.then(res => res.json());
 	},  
 	update: function (document, token) {
-		const url = buildUrl(`${ITEMS_URL}${document.id}`);
+		const url = buildUrl(`${REVIEWS_URL}${document.id}`);
 
 		return fetch(url, {
 			method: 'PUT',
