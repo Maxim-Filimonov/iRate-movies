@@ -93,6 +93,7 @@ ul {
 .content {
   margin: auto;
   margin-top: 60px;
+  margin-bottom: 60px;
   padding: 20px;
   width: 800px;
   min-height: 100%;
@@ -115,6 +116,7 @@ ul {
 .username, .password, .confirmPassword{
   border-radius: 15px;
   text-align: center;
+  margin-top: 3px;
 }
 
 .reviewLabel{
@@ -160,14 +162,14 @@ ul {
   font-size: 15px;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
-}
+}*/
 
-.btn:hover {
-  background: #3cb0fd;
-  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+button:hover {
+  background: #a3c2d4;
+  background-image: -webkit-linear-gradient(top, #a3c2d4, #a3c2d4);
+  background-image: -moz-linear-gradient(top, #a3c2d4, #a3c2d4);
+  background-image: -ms-linear-gradient(top, #a3c2d4, #a3c2d4);
+  background-image: -o-linear-gradient(top, #a3c2d4, #a3c2d4);
+  background-image: linear-gradient(to bottom, #a3c2d4, #a3c2d4);
   text-decoration: none;
-} */
+} 
