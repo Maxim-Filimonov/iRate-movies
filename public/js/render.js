@@ -25,7 +25,7 @@ var render = {
 
   },
   results: function (state) {
-    const listItems = state.list.map((item) => {
+    const listItems = state.list.slice(0,9).map((item) => {
       return `<li class"list" id="${item.id}">
                 <a href="" class="detail">${item.name} ${item.date}</a>
                 <a href="#" class="remove"></a>

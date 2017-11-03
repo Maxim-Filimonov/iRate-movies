@@ -14,7 +14,6 @@ const items = require('../db/storage')('items');
 function seedLandingPageMoviesData() {
   Movie.find()
     .sort({ release_date: -1 })
-    .limit(10)
     .then(movies =>
       movies.map(movie => {
         movie = movie.apiRepr();
