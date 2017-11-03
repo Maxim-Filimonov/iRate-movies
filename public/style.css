@@ -30,6 +30,7 @@ button {
   margin-left: 20px;
   margin-top: 20px;
   background-color: lightblue;
+  border-radius: 15px;
 }
 
 #nav li {
@@ -83,7 +84,7 @@ li {
   border-radius: 15px;
 
 }
-.btn {
+/* .btn {
   background: #3498db;
   background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
   background-image: -moz-linear-gradient(top, #3498db, #2980b9);
@@ -108,4 +109,4 @@ li {
   background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
   background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
   text-decoration: none;
-}
+} */

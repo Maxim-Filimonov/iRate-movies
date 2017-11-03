@@ -6,8 +6,6 @@
  * Event Handlers validate input, update STATE and call render methods
  */
 
-//var activeMovieId;
-
 var handle = {
   signup: function (event) {
     event.preventDefault();

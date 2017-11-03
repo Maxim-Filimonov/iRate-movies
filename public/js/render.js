@@ -55,8 +55,6 @@ var render = {
     console.log('===========', title);
     el.find('.review').text(`${item.content}`);
     el.find('.review-movie').text(`Movie: ${title}`);
-    // el.find('.tagline').text(`${item.tagline} `);
-    // el.find('.movieId').text(`${item.id} `);
     window.activeMovieId = item.id;
   },
   status: function (state) {
