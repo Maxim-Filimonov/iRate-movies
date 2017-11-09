@@ -82,7 +82,7 @@ var handle = {
       expiry.setUTCSeconds(decoded.exp);
 
       timer.remaining = Math.floor(expiry - now);
-      //console.log('Seconds: ', Math.floor(timer.remaining / 1000));
+      console.log('Seconds: ', Math.floor(timer.remaining / 1000));
       if (timer.remaining < 0) {
         timer.status = 'expired';
       } else if (timer.remaining <= timer.warning) {
@@ -208,18 +208,18 @@ var handle = {
           console.error('ERROR:', err);
         });
     });
-    // api.remove(id, state.token)
-    //   .then(() => {
-    //     state.list = null; //invalidate cached list results
-    //     return handle.search(event);
-    //   }).catch(err => {
-    //     if (err.status === 401) {
-    //       state.backTo = state.view;
-    //       state.view = 'signup';
-    //       render.page(state);
-    //     }
-    //     console.error('ERROR:', err);
-    //   });
+    api.remove(id, state.token)
+      .then(() => {
+        state.list = null; //invalidate cached list results
+        return handle.search(event);
+      }).catch(err => {
+        if (err.status === 401) {
+          state.backTo = state.view;
+          state.view = 'signup';
+          render.page(state);
+        }
+        console.error('ERROR:', err);
+      });
   },
   viewCreate: function (event) {
     event.preventDefault();

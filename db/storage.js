@@ -28,7 +28,7 @@ const Storage = {
 		const { id } = updatedItem;
 		if (!(id in this.items)) {
 			console.log(`Item \`${id}\` because doesn't exist.`);
-			//throw StorageException(`Item \`${id}\` because doesn't exist.`);
+			throw StorageException(`Item \`${id}\` because doesn't exist.`);
 		}
 		this.items[updatedItem.id] = updatedItem;
 		return updatedItem;

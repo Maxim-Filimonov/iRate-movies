@@ -52,7 +52,6 @@ var render = {
   review: function (state) {
     const el = $('#review');
     const item = state.item;
-    //console.log('===========', title);
     el.find('.review').text(`${item.content}`);
     el.find('.review-movie').text(`Movie: ${title}`);
     window.activeMovieId = item.id;

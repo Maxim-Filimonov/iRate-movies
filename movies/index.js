@@ -54,7 +54,6 @@ router.post('/', jwtAuth, jsonParser, (req, res) => {
   requiredFields.forEach(field => {
     if (!(field in req.body)) {
       const message = `You are missing required field: ${field}`;
-      console.log(message);
       return res.status(400).send(message);
     }
   });
@@ -67,7 +66,6 @@ router.post('/', jwtAuth, jsonParser, (req, res) => {
     content
   })
     .then(review => {
-      console.log(review);
       res.status(201).json(review.apiRepr());
     })
     .catch(err => {

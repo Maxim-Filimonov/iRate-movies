@@ -34,11 +34,9 @@ function initializeDb() {
 }
 
 function createUsers(users) {
-    console.log(users);
     return User
         .insertMany(users)
         .then(user => {
-            console.log(user);
             user.map(person => {
                 userIds.push(person._id);
             });
@@ -57,7 +55,6 @@ function pullMovies() {
             movies.map(movie => {
                 movieIds.push(movie._id);
             });
-            console.log(movieIds);
             return generateReviews(movieIds);
         });
 }
@@ -72,12 +69,10 @@ function generateReviews(movieIds) {
         };
         reviews.push(review);
     }
-    console.log(reviews);
-
+    
     return Review
         .insertMany(reviews)
         .then(results => {
-            console.log(results);
         })
         .catch(err => console.log(err));
 }
