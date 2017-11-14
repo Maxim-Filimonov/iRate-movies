@@ -1,0 +1,155 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Home</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+	<div class="background-wrap">
+		<video id="video-bg-elem" preload="auto" autoplay="true" loop="loop" muted="muted">
+			<source src="https://www.videvo.net/videvo_files/converted/2013_06/videos/VintageCinemaFilmLoop.mov28670.mp4">
+				Video Not Supported
+		</video>
+	</div>
+
+<div class="content">
+	<h2>iRate Movie Review</h2>
+	<ul id="nav">
+		<li> </li><a href="" class="viewSearch">Search</a> |
+		<li> </li><a href="" class="viewSignup">SignUp</a> |
+		<li> </li><a href="" class="viewLogin">Login</a> 
+	</ul>
+
+	<form id="search" class="view">
+		<fieldset class="fieldsets">
+			<legend class="movie-search">Movie Search</legend>
+			<div>
+				<label class="name" for="name"></label>
+				<input class="search-box" type="text" name="name" placeholder="search">
+			</div>
+			<button class="btn" type="submit">GO</button>
+		</fieldset>
+
+		<div id="result"></div>
+	</form>
+
+	<form id="signup" class="view">
+		<fieldset>
+			<legend>Signup</legend>
+			<div>
+				<label for="username">Username</label>
+				<input class="username"type="text" id="username" name="username" value="">
+			</div>
+			<div>
+				<label for="password">Password</label>
+				<input class="password" type="password" id="password" name="password" value="">
+			</div>
+			<div>
+				<label for="password">Confirm Password</label>
+				<input class="confirmPassword"type="password" id="password" name="password" value="">
+			</div>
+			<button type="submit">Signup</button> Already have an account? <a href="" class="viewLogin">Login</a>
+		</fieldset>
+	</form>
+
+	<form id="login" class="view">
+		<fieldset>
+			<legend>Login</legend>
+			<div>
+				<label for="username">Username</label>
+				<input class="username"type="text" id="username" name="username" value="">
+			</div>
+			<div>
+				<label for="password">Password</label>
+				<input class="password"type="password" id="password" name="password" value="">
+			</div>
+			<button type="submit">Login</button> Don't have an account? <a href="" class="viewSignup">Signup</a>
+		</fieldset>
+	</form>
+
+	<form id="create" class="view">
+				<a href="" class="viewList">&lt; Back to list results </a>
+			</section>
+		<fieldset>
+			<legend>Write a Review</legend>
+			<div>
+				<label class="reviewLabel"for="review"></label>
+				<textarea id="textarea-review" rows="4" cols="50" type="text" name="review"></textarea>
+			</div>
+			<button type="submit">Submit</button>
+		</fieldset>
+	</form>
+
+	<section id="detail" class="view">
+		<fieldset class="list">
+			<legend class="detail-legend">Detail</legend>
+			<div>
+				<label for="date">Release Date:</label>
+				<span class="date">vxzc</span>
+			</div>
+			<div>
+				<label for="name">Name:</label>
+				<span class="name">vxzc</span>
+			</div>
+			<div>
+				<label for="tagline">Tagline:</label>
+				<span class="tagline">vxzc</span>
+			</div>
+			
+			<a href="" class="viewCreate">Write a Review</a><br>
+			<a href="" class="edit">Update Review</a>
+		</fieldset>
+		<a href="" class="viewList">&lt; Back to list results </a>
+	</section>
+	
+	<form id="edit" class="view">
+		<fieldset>
+			<legend>Edit</legend>
+			
+			<div>
+					<label for="review">Review</label>
+					<textarea id="textarea-review" rows="4" cols="50" type="text" name="review"></textarea>
+				</div>
+			<button type="submit">Submit</button>
+		</fieldset>
+	</form>
+
+	<form id="review" class="view">
+				<a href="" class="viewList">&lt; Back to Movies List</a>
+			</section>
+		<fieldset>
+			<legend>Reviews</legend>
+			<div class="review-box">
+				<div class="review-movie">Movie: </div>
+				<label for="review">Review:</label>
+				<span class="review"></span>
+				<a href="#" class="remove"></a>
+				
+			</div>
+			<a href="" class="edit">Update Review</a>
+		
+		</fieldset>
+	</form>
+</div>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	 crossorigin="anonymous"></script>
+	<script>
+		window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')
+	</script>
+
+	<script src="js/fetch.js"></script>
+	<script src="js/render.js"></script>
+	<script src="js/handle.js"></script>
+	<script src="js/app.js"></script>
+</body>
+
+</html>
